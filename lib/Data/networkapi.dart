@@ -5,10 +5,10 @@ import 'baseapi.dart';
 
 class NetworkApiServices extends BaseApiServices {
   @override
-  Future<dynamic> getApi(String url) async {
+  Future<dynamic> getApi(String url,Map<String,String> headers) async {
     dynamic responseJson;
     try {
-      final response = await http.get(Uri.parse(url));
+      final response = await http.get(Uri.parse(url),headers: headers);
       responseJson = jsonDecode(response.body);
       return responseJson;
     }

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:get/route_manager.dart';
 import 'package:odooadmin/constant/utils.dart';
 import 'package:odooadmin/pref/user_pref.dart';
 import 'package:odooadmin/res/Routes/routes_name.dart';
+import 'package:odooadmin/view_model/home_controller.dart';
 import 'package:odooadmin/widget/custom_container.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -15,6 +17,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
+  HomeController controller = Get.put(HomeController());
 
   Future<void> data()
   async {
@@ -42,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      body: SingleChildScrollView(
+      body:  SingleChildScrollView(
         child: Column(
           children: [
             AddverticalSpace(30.h),
@@ -52,7 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
               200.w,
               Colors.white,
               Colors.black,
-              () async {
+                  () async {
                 Get.toNamed(RoutesName.userDetailsScreen);
               },
             ),
@@ -63,7 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
               200.w,
               Colors.white,
               Colors.black,
-              () {
+                  () {
                 Get.toNamed(RoutesName.crimeDetailsScreen);
               },
             ),
@@ -74,7 +78,7 @@ class _HomeScreenState extends State<HomeScreen> {
               200.w,
               Colors.white,
               Colors.black,
-              () {
+                  () {
                 Get.toNamed(RoutesName.policeDetailsScreen);
               },
             ),

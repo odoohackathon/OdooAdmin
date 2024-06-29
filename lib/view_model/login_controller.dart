@@ -22,12 +22,14 @@ class LoginController extends GetxController
 
       Future<void> loginApi(BuildContext contex) async {
             print("${name.value.text}-----------------");
+            isLogin.value=true;
             apiServices.postApi(Url.loginurl,jsonEncode(<String,String>{
                "username":name.value.text,
                "password":pass.value.text,
             })).then((value) async {
                 if(value['result']==true)
                   {
+                    isLogin.value=false;
                     showSnackBar(message: value['message'], context: contex);
                     SharedPreferences preferences = await SharedPreferences.getInstance();
                     preferences.setString("token", value['token']);
@@ -36,6 +38,7 @@ class LoginController extends GetxController
                   }
                   else
                     {
+                      isLogin.value=false;
                       showSnackBar(message: value['message'], context: contex);
                     }
             },);

@@ -101,13 +101,14 @@ class LoginScreen extends StatelessWidget {
                     {
                       print(controller.name.value.text);
 
+
                       controller.loginApi(context);
 
                     }
                     else {
                       showSnackBar(message: "Please fill all fields", context: context);
                     }
-                  }, child: Text("Sign In",style: TextStyle(color: Colors.white),))),
+                  }, child: Obx(() => controller.isLogin.value== true ? CircularProgressIndicator() :Text("Sign In",style: TextStyle(color: Colors.white),))),)
             ],
           ),
         ),
