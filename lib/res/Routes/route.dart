@@ -4,6 +4,7 @@ import 'package:odooadmin/Screen/HomeScreen/home_screen.dart';
 import 'package:odooadmin/Screen/HomeScreen/police_details_screen.dart';
 import 'package:odooadmin/Screen/HomeScreen/police_verification_screen.dart';
 import 'package:odooadmin/Screen/HomeScreen/user_details_screen.dart';
+import 'package:odooadmin/Screen/HomeScreen/video_playing.dart';
 import 'package:odooadmin/Screen/Login_Screen/login_screen.dart';
 import 'package:odooadmin/res/Routes/routes_name.dart';
 
@@ -26,5 +27,6 @@ class satish
         GetPage(name: RoutesName.policeVerificationScreen, page: () => PoliceVerificationScreen(),),
 
         GetPage(name: RoutesName.splashScreen, page: () => SplashScreen(),),
+        GetPage(name: RoutesName.videoScreen, page: () => Video_Screen(),),
     ];
 }

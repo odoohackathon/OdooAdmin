@@ -7,4 +7,5 @@ class RoutesName
     static const String crimeDetailsScreen = "/crimeDetailsScreen";
     static const String policeVerificationScreen = "/policeVerificationScreen";
     static const String splashScreen = "/splashScreen";
+    static const String videoScreen = "/videoScreen";
 }

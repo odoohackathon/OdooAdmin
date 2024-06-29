@@ -40,6 +40,7 @@ dependencies:
   get:
   shared_preferences:
   http:
+  video_player: ^2.9.1
 
 
 dev_dependencies:
